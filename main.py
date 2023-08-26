@@ -13,7 +13,13 @@ import sqlite3
 import database
 import interactions
 from discord import app_commands
+import os
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+token =  os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
 
@@ -181,4 +187,4 @@ async def stats(ctx, user: discord.User = None):
 
 
 
-bot.run('MTE0NDYwMTA3MTMxMDg2NDQ0NQ.GW4dES.RkYBYXYmYF33ynDRoxYFIfwPIHhC2PJkTDQdcQ')
+bot.run(token)
